@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MadHatter Video", "MadHatter Video.csproj", "{0800CE95-E4D8-401A-86B6-59115C8A0093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest Hatter", "UnitTest Hatter\UnitTest Hatter.csproj", "{6321AE05-F40B-4BC3-98CC-7B5A121F8CF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0800CE95-E4D8-401A-86B6-59115C8A0093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0800CE95-E4D8-401A-86B6-59115C8A0093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0800CE95-E4D8-401A-86B6-59115C8A0093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0800CE95-E4D8-401A-86B6-59115C8A0093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6321AE05-F40B-4BC3-98CC-7B5A121F8CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6321AE05-F40B-4BC3-98CC-7B5A121F8CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6321AE05-F40B-4BC3-98CC-7B5A121F8CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6321AE05-F40B-4BC3-98CC-7B5A121F8CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E31F47C2-EB95-4E04-98C4-C67784C504DD}
+	EndGlobalSection
+EndGlobal
