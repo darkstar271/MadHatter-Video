@@ -18,13 +18,50 @@ namespace MadHatter_Video
         SqlConnection Con = new SqlConnection();
         DataTable MovieTable = new DataTable();
 
+        public DataTable AllMovies { get; set; }
+
+
+        //constructor
+        public Data()
+        {
+            Con.ConnectionString = Trek;
+        }
 
         // just a method to load database
-        private void loaddb()
+        public void loaddb()
         {
             //load datatable columns
             datatablecolumns();
+            using (SqlConnection connection = new SqlConnection(Trek))
+            {
+                string QueryString = @"SELECT * FROM Movies order by MovieID";
 
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(QueryString, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    MovieTable.Rows.Add(
+                        reader["MovieID"],
+                        reader["Rating"],
+                        reader["Title"],
+                        reader["Year"],
+                        reader["Rental_Cost"],
+                        reader["Plot"],
+                        reader["Genre"],
+                        reader["Date"]);
+                }
+                reader.Close();
+                connection.Close();
+                //DgvMovies.DataSource = MovieTable;
+
+
+                AllMovies = MovieTable;
+
+            }
 
         }
 

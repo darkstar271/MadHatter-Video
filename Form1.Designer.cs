@@ -65,16 +65,16 @@
             this.labGenre = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCutomer = new System.Windows.Forms.TabPage();
+            this.DgvCustomers = new System.Windows.Forms.DataGridView();
             this.tabMovies = new System.Windows.Forms.TabPage();
             this.tabRented_Movies = new System.Windows.Forms.TabPage();
-            this.DgvCustomers = new System.Windows.Forms.DataGridView();
             this.DgvRented_Movies = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovies)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabCutomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
             this.tabMovies.SuspendLayout();
             this.tabRented_Movies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRented_Movies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,10 +91,12 @@
             // DgvMovies
             // 
             this.DgvMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMovies.Location = new System.Drawing.Point(324, 23);
+            this.DgvMovies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvMovies.Location = new System.Drawing.Point(3, 3);
             this.DgvMovies.Name = "DgvMovies";
-            this.DgvMovies.Size = new System.Drawing.Size(217, 300);
+            this.DgvMovies.Size = new System.Drawing.Size(832, 357);
             this.DgvMovies.TabIndex = 1;
+            this.DgvMovies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovies_CellContentClick);
             // 
             // button2
             // 
@@ -392,6 +394,15 @@
             this.tabCutomer.Text = "Customer";
             this.tabCutomer.UseVisualStyleBackColor = true;
             // 
+            // DgvCustomers
+            // 
+            this.DgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvCustomers.Location = new System.Drawing.Point(3, 3);
+            this.DgvCustomers.Name = "DgvCustomers";
+            this.DgvCustomers.Size = new System.Drawing.Size(832, 357);
+            this.DgvCustomers.TabIndex = 36;
+            // 
             // tabMovies
             // 
             this.tabMovies.Controls.Add(this.DgvMovies);
@@ -413,20 +424,13 @@
             this.tabRented_Movies.Text = "Rented Movies";
             this.tabRented_Movies.UseVisualStyleBackColor = true;
             // 
-            // DgvCustomers
-            // 
-            this.DgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCustomers.Location = new System.Drawing.Point(119, 52);
-            this.DgvCustomers.Name = "DgvCustomers";
-            this.DgvCustomers.Size = new System.Drawing.Size(240, 150);
-            this.DgvCustomers.TabIndex = 36;
-            // 
             // DgvRented_Movies
             // 
             this.DgvRented_Movies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvRented_Movies.Location = new System.Drawing.Point(242, 56);
+            this.DgvRented_Movies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvRented_Movies.Location = new System.Drawing.Point(0, 0);
             this.DgvRented_Movies.Name = "DgvRented_Movies";
-            this.DgvRented_Movies.Size = new System.Drawing.Size(240, 150);
+            this.DgvRented_Movies.Size = new System.Drawing.Size(838, 363);
             this.DgvRented_Movies.TabIndex = 36;
             // 
             // Form1
@@ -474,9 +478,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovies)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabCutomer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();
             this.tabMovies.ResumeLayout(false);
             this.tabRented_Movies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRented_Movies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
