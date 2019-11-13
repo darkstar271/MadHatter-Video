@@ -9,16 +9,20 @@ using System.Windows.Forms;
 //todo page 253 new golf book
 namespace MadHatter_Video
 {
+    // Clean up code with #region #endregion
     class Data
     {
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
         // this is the connection string, it can be used anywhere in program and it is read only.
-        public String Trek { get; } = @"Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
+        // public String Trek { get; } = @"Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
+
+        public String Trek { get; } = @"Data Source = CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
 
         SqlConnection Con = new SqlConnection();
         DataTable MovieTable = new DataTable();
 
         public DataTable AllMovies { get; set; }
+        // make 2 more get, sets for Customer and Rented Movies
 
 
         //constructor
@@ -27,7 +31,8 @@ namespace MadHatter_Video
             Con.ConnectionString = Trek;
         }
 
-        // just a method to load database
+        // make 2 more load data for Customer and Rented Movies
+        // just a method to load all Movies for database
         public void loaddb()
         {
             //load datatable columns
@@ -51,20 +56,15 @@ namespace MadHatter_Video
                         reader["Year"],
                         reader["Rental_Cost"],
                         reader["Plot"],
-                        reader["Genre"],
-                        reader["Date"]);
+                        reader["Genre"]);//reader["Date"]
                 }
                 reader.Close();
                 connection.Close();
                 //DgvMovies.DataSource = MovieTable;
-
-
                 AllMovies = MovieTable;
-
             }
-
         }
-
+        // make 2 more load data for Customer and Rented Movies
         public void datatablecolumns()
         {
 
@@ -78,18 +78,15 @@ namespace MadHatter_Video
                 MovieTable.Columns.Add("Rental_Cost");
                 MovieTable.Columns.Add("Plot");
                 MovieTable.Columns.Add("Genre");
-                MovieTable.Columns.Add("Date");
-
-
+                // MovieTable.Columns.Add("Date");
             }
             catch
             {
                 MessageBox.Show("Not working");
             }
-
-
-
         }
+
+
 
 
     }

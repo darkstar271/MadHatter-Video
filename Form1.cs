@@ -21,7 +21,7 @@ namespace MadHatter_Video
     {   // this instantiates a new class of the Data Class
         Data loreData = new Data();
         //private String Trek = @"Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
-
+        Data myData = new Data();
         SqlConnection Con = new SqlConnection();
         DataTable MovieTable = new DataTable();
         public Form1()
@@ -147,7 +147,73 @@ namespace MadHatter_Video
 
         //}
 
-        private void DgvMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //private void DgvMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+
+        //}
+
+        public void CelClickMovie(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // TbxIdCu.Text = DGVCustomers.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+        }
+
+        private void DgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int OwnerID = 0;
+            try
+            {
+                //txtMovieID.Text = DgvMovies.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //txtRating.Text = DgvMovies.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //txtTitle.Text = DgvMovies.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //txtYear.Text = DgvMovies.Rows[e.RowIndex].Cells[3].Value.ToString();
+                //txtRent_Cost.Text = DgvMovies.Rows[e.RowIndex].Cells[4].Value.ToString();
+                //txtPlot.Text = DgvMovies.Rows[e.RowIndex].Cells[5].Value.ToString();
+                //txtGenre.Text = DgvMovies.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                //if (e.RowIndex >= 0)
+                //{
+                //    DGVCustomers.DataSource = myData.Fill(OwnerID.ToString());
+                //}
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
+        private void DgvMovies_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int OwnerID = 0;
+            try
+            {
+                txtMovieID.Text = DgvMovies.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtRating.Text = DgvMovies.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtTitle.Text = DgvMovies.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtYear.Text = DgvMovies.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtRent_Cost.Text = DgvMovies.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtPlot.Text = DgvMovies.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtGenre.Text = DgvMovies.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                //if (e.RowIndex >= 0)
+                //{
+                //    DGVCustomers.DataSource = myData.Fill(OwnerID.ToString());
+                //}
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
+        private void DgvRented_Movies_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -96,7 +96,8 @@
             this.DgvMovies.Name = "DgvMovies";
             this.DgvMovies.Size = new System.Drawing.Size(832, 357);
             this.DgvMovies.TabIndex = 1;
-            this.DgvMovies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovies_CellContentClick);
+            this.DgvMovies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovies_CellContentClick_1);
+            this.DgvMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovies_CellContentClick_1);
             // 
             // button2
             // 
@@ -402,6 +403,7 @@
             this.DgvCustomers.Name = "DgvCustomers";
             this.DgvCustomers.Size = new System.Drawing.Size(832, 357);
             this.DgvCustomers.TabIndex = 36;
+            this.DgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCustomers_CellContentClick);
             // 
             // tabMovies
             // 
@@ -432,6 +434,7 @@
             this.DgvRented_Movies.Name = "DgvRented_Movies";
             this.DgvRented_Movies.Size = new System.Drawing.Size(838, 363);
             this.DgvRented_Movies.TabIndex = 36;
+            this.DgvRented_Movies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRented_Movies_CellContentClick);
             // 
             // Form1
             // 
