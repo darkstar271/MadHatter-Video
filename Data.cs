@@ -20,9 +20,13 @@ namespace MadHatter_Video
 
         SqlConnection Con = new SqlConnection();
         DataTable MovieTable = new DataTable();
-
+        DataTable CusTable = new DataTable();
+        DataTable RenMovTable = new DataTable();
+        // these 3 properties allow data to be sent to the winform
         public DataTable AllMovies { get; set; }
-        // make 2 more get, sets for Customer and Rented Movies
+        public DataTable AllCustomers { get; set; }
+        public DataTable AllRentedMovies { get; set; }
+
 
 
         //constructor
@@ -64,10 +68,47 @@ namespace MadHatter_Video
                 AllMovies = MovieTable;
             }
         }
+
+
+        public void loaddbCus()
+        {
+            //load datatable columns
+            datatableColCus();
+            using (SqlConnection connection = new SqlConnection(Trek))
+            {
+                string QueryString = @"SELECT * FROM Customer order by CustID";
+
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(QueryString, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    CusTable.Rows.Add(
+
+                        reader["CustID"],
+                        reader["FirstName"],
+                        reader["LastName"],
+                        reader["Address"],
+                        reader["Phone"]);
+
+                }
+                reader.Close();
+                connection.Close();
+                //DgvMovies.DataSource = MovieTable;
+
+                AllCustomers = CusTable;
+            }
+        }
+
+
+
         // make 2 more load data for Customer and Rented Movies
+        // This gets the data form each column and sends it to the table Columns
         public void datatablecolumns()
         {
-
             MovieTable.Clear();
             try
             {
@@ -86,7 +127,24 @@ namespace MadHatter_Video
             }
         }
 
+        public void datatableColCus()
+        {
+            CusTable.Clear();
 
+            try
+            {
+                CusTable.Columns.Add("CusID");
+                CusTable.Columns.Add("FirstName");
+                CusTable.Columns.Add("LastName");
+                CusTable.Columns.Add("Address");
+                CusTable.Columns.Add("Phone");
+            }
+            catch
+            {
+                MessageBox.Show("Not working");
+            }
+
+        }
 
 
     }
