@@ -31,9 +31,9 @@
             this.btnAlmovies = new System.Windows.Forms.Button();
             this.DgvMovies = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDelCus = new System.Windows.Forms.Button();
+            this.btnDelMov = new System.Windows.Forms.Button();
+            this.btnDelRenMov = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -103,41 +103,41 @@
             // 
             this.button2.Location = new System.Drawing.Point(928, 83);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 40);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Add Customer";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
-            // button3
+            // btnDelCus
             // 
-            this.button3.Location = new System.Drawing.Point(933, 189);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.BtnAlmovies_Click);
+            this.btnDelCus.Location = new System.Drawing.Point(933, 189);
+            this.btnDelCus.Name = "btnDelCus";
+            this.btnDelCus.Size = new System.Drawing.Size(75, 40);
+            this.btnDelCus.TabIndex = 3;
+            this.btnDelCus.Text = "Del Customer";
+            this.btnDelCus.UseVisualStyleBackColor = true;
+            this.btnDelCus.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
-            // button4
+            // btnDelMov
             // 
-            this.button4.Location = new System.Drawing.Point(593, 588);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.BtnAlmovies_Click);
+            this.btnDelMov.Location = new System.Drawing.Point(1053, 198);
+            this.btnDelMov.Name = "btnDelMov";
+            this.btnDelMov.Size = new System.Drawing.Size(75, 40);
+            this.btnDelMov.TabIndex = 4;
+            this.btnDelMov.Text = "Del Movie";
+            this.btnDelMov.UseVisualStyleBackColor = true;
+            this.btnDelMov.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
-            // button5
+            // btnDelRenMov
             // 
-            this.button5.Location = new System.Drawing.Point(703, 588);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.BtnAlmovies_Click);
+            this.btnDelRenMov.Location = new System.Drawing.Point(1057, 244);
+            this.btnDelRenMov.Name = "btnDelRenMov";
+            this.btnDelRenMov.Size = new System.Drawing.Size(75, 40);
+            this.btnDelRenMov.TabIndex = 5;
+            this.btnDelRenMov.Text = "Lost Rented Movie";
+            this.btnDelRenMov.UseVisualStyleBackColor = true;
+            this.btnDelRenMov.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
             // button6
             // 
@@ -472,9 +472,9 @@
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDelRenMov);
+            this.Controls.Add(this.btnDelMov);
+            this.Controls.Add(this.btnDelCus);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAlmovies);
             this.Name = "Form1";
@@ -496,9 +496,9 @@
         private System.Windows.Forms.Button btnAlmovies;
         private System.Windows.Forms.DataGridView DgvMovies;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDelCus;
+        private System.Windows.Forms.Button btnDelMov;
+        private System.Windows.Forms.Button btnDelRenMov;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtFirstName;

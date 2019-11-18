@@ -22,6 +22,9 @@ namespace MadHatter_Video
         Data loreData = new Data();
         //private String Trek = @"Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
 
+        // Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog=VBMoviesFullData;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+
         SqlConnection Con = new SqlConnection();
         DataTable MovieTable = new DataTable();
         DataTable CusTable = new DataTable();
@@ -50,39 +53,7 @@ namespace MadHatter_Video
 
         }
 
-        // the Add Customer method
-        private string AddCus(string FirstName, string LastName, string Address, string Phone)
-        {
-            //load datatable columns
-            string borg = "INSERT INTO Customer (FirstName, LastName, Address, Phone) " +
-                          "VALUES(@FirstName, @LastName, @Address, @Phone)";
-            var myCat = new SqlCommand(borg, Con);
-            //page 294
 
-            using (SqlConnection connection = new SqlConnection(Trek))
-            {
-                string QueryString = @"SELECT * FROM Movies order by MovieID";
-
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(QueryString, connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-
-                }
-                reader.Close();
-                connection.Close();
-
-
-
-
-
-            }
-
-        }
 
 
 
@@ -94,20 +65,23 @@ namespace MadHatter_Video
             {
                 switch (ButCheck)
                 {
-                    case "All Movies":
+                    case "btnAlmovies":
                         // run some Method or do something
                         DgvMovies.DataSource = MovieTable;
                         loreData.loaddb();
                         break;
-                    case " 2  ":// Add customer
-                        // method to insert data
+                    case "button2":// Add customer
+                        AddCus(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPhone.Text);              // method to insert data this.Text =
+                        loreData.loaddbCus();                                                                                      //  loreData.loaddb();
                         break;
-                    case "  3 ":
+                    case "btnDelCus":
+                        Delete(txtID.Text, "btnDelCus");// this runs the delete method and sends the ID in txtID and btnDelCus as Parameters
+                        loreData.loaddbCus();
                         break;
 
-                    case " 4  ":
+                    case "btnDelMov":
                         break;
-                    case " 5  ":
+                    case "btnDelRenMov":
                         break;
                     case "  6 ":
                         break;
@@ -155,6 +129,85 @@ namespace MadHatter_Video
         //{
 
         //}
+
+
+        // the Add Customer method
+        public string AddCus(string FirstName, string LastName, string Address, string Phone)
+        {
+            //load datatable columns
+            string borg = "INSERT INTO Customer (FirstName, LastName, Address, Phone) " +
+                          "VALUES(@FirstName, @LastName, @Address, @Phone)";
+            var myCat = new SqlCommand(borg, Con);// borg is the SQL query and Con is the connection string
+            //page 294
+            //create params
+            myCat.Parameters.AddWithValue("FirstName", FirstName);
+            myCat.Parameters.AddWithValue("LastName", LastName);
+            myCat.Parameters.AddWithValue("Address", Address);
+            myCat.Parameters.AddWithValue("Phone", Phone);
+            try
+            {
+                Con.Open();// open connection 
+                myCat.ExecuteNonQuery();//add in the SQL
+                Con.Close();// close connection 
+                return " is Successful";
+            }
+            catch (Exception e)
+            {
+                Con.Close();// close connection 
+                return " has Failed with " + e;
+            }
+
+
+
+
+
+        }
+
+        public string Delete(string ID, string DelSwitch)
+        {
+            //only run if there is something in the textbox
+            if (!object.ReferenceEquals(ID, string.Empty))
+            {
+                var myCommand = new SqlCommand();
+                switch (DelSwitch)
+                {
+                    case "btnDelCus":
+                        myCommand = new SqlCommand("DELETE FROM Customer WHERE CustID = @ID", Con);
+                        break;
+                    case "btnDelMov":
+                        myCommand = new SqlCommand("DELETE FROM Movies WHERE MovieID = @ID", Con);
+                        break;
+                    case "btnDelRenMov":
+                        myCommand = new SqlCommand("DELETE FROM RentedMovies WHERE RMID = @ID", Con);
+                        break;
+                }// the first "ID" is the one in the case@ID, the second on is the ID coming from the txt box
+                myCommand.Parameters.AddWithValue("ID", ID);
+                //use parameters to prevent SQL injections
+
+                Con.Open();
+
+                // open connection add in the SQL
+                myCommand.ExecuteNonQuery();
+                Con.Close();
+                return "Success";
+            }
+            else
+            {
+                Con.Close();
+                return "Failed";
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
 
         public void CelClickMovie(object sender, DataGridViewCellEventArgs e)
         {
