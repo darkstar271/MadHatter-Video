@@ -37,7 +37,7 @@ namespace MadHatter_Video
 
         // make 2 more load data for Customer and Rented Movies
         // just a method to load all Movies for database
-        public void loaddb()
+        public void loaddb()// loads all movies
         {
             //load datatable columns
             datatablecolumns();
@@ -70,7 +70,7 @@ namespace MadHatter_Video
         }
 
 
-        public void loaddbCus()
+        public void loaddbCus()// loads all Customers
         {
             //load datatable columns
             datatableColCus();
@@ -103,11 +103,43 @@ namespace MadHatter_Video
             }
         }
 
+        public void loaddbRenMov()// loads all Rented movies
+        {
+            //load datatable columns
+            datatableColReMo();
+            using (SqlConnection connection = new SqlConnection(Trek))
+            {
+                string QueryString = @"SELECT * FROM RentedMovies order by RMID";
+
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(QueryString, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    RenMovTable.Rows.Add(
+
+                        reader["RMID"],
+                        reader["MovieIDFK"],
+                        reader["CustIDFK"],
+                        reader["DateRented"],
+                        reader["DateRetured"]);
+
+                }
+                reader.Close();
+                connection.Close();
+                //DgvMovies.DataSource = MovieTable;
+
+                AllRentedMovies = RenMovTable;
+            }
+        }
 
 
         // make 2 more load data for Customer and Rented Movies
         // This gets the data form each column and sends it to the table Columns
-        public void datatablecolumns()
+        public void datatablecolumns()// movies
         {
             MovieTable.Clear();
             try
@@ -127,7 +159,7 @@ namespace MadHatter_Video
             }
         }
 
-        public void datatableColCus()
+        public void datatableColCus()// Customers
         {
             CusTable.Clear();
 
@@ -146,6 +178,11 @@ namespace MadHatter_Video
 
         }
 
+        public void datatableColReMo()// Rented Movies
+        {
 
+
+
+        }
     }
 }

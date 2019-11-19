@@ -48,7 +48,7 @@
             this.txtRent_Cost = new System.Windows.Forms.TextBox();
             this.txtPlot = new System.Windows.Forms.TextBox();
             this.txtGenre = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtDateRen = new System.Windows.Forms.TextBox();
             this.labCustID = new System.Windows.Forms.Label();
             this.labFirstName = new System.Windows.Forms.Label();
             this.labLastName = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.labRent_Cost = new System.Windows.Forms.Label();
             this.labYear = new System.Windows.Forms.Label();
             this.labTitle = new System.Windows.Forms.Label();
-            this.labDate = new System.Windows.Forms.Label();
+            this.labDateRen = new System.Windows.Forms.Label();
             this.labGenre = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCutomer = new System.Windows.Forms.TabPage();
@@ -69,6 +69,8 @@
             this.tabMovies = new System.Windows.Forms.TabPage();
             this.tabRented_Movies = new System.Windows.Forms.TabPage();
             this.DgvRented_Movies = new System.Windows.Forms.DataGridView();
+            this.txtDateRet = new System.Windows.Forms.TextBox();
+            this.labDateRet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovies)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabCutomer.SuspendLayout();
@@ -240,12 +242,12 @@
             this.txtGenre.Size = new System.Drawing.Size(100, 20);
             this.txtGenre.TabIndex = 20;
             // 
-            // txtDate
+            // txtDateRen
             // 
-            this.txtDate.Location = new System.Drawing.Point(1032, 551);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(100, 20);
-            this.txtDate.TabIndex = 19;
+            this.txtDateRen.Location = new System.Drawing.Point(1034, 551);
+            this.txtDateRen.Name = "txtDateRen";
+            this.txtDateRen.Size = new System.Drawing.Size(100, 20);
+            this.txtDateRen.TabIndex = 19;
             // 
             // labCustID
             // 
@@ -355,14 +357,14 @@
             this.labTitle.TabIndex = 29;
             this.labTitle.Text = "Title";
             // 
-            // labDate
+            // labDateRen
             // 
-            this.labDate.AutoSize = true;
-            this.labDate.Location = new System.Drawing.Point(1050, 535);
-            this.labDate.Name = "labDate";
-            this.labDate.Size = new System.Drawing.Size(30, 13);
-            this.labDate.TabIndex = 34;
-            this.labDate.Text = "Date";
+            this.labDateRen.AutoSize = true;
+            this.labDateRen.Location = new System.Drawing.Point(1060, 535);
+            this.labDateRen.Name = "labDateRen";
+            this.labDateRen.Size = new System.Drawing.Size(68, 13);
+            this.labDateRen.TabIndex = 34;
+            this.labDateRen.Text = "Date Rented";
             // 
             // labGenre
             // 
@@ -437,13 +439,31 @@
             this.DgvRented_Movies.TabIndex = 36;
             this.DgvRented_Movies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRented_Movies_CellContentClick);
             // 
+            // txtDateRet
+            // 
+            this.txtDateRet.Location = new System.Drawing.Point(1167, 551);
+            this.txtDateRet.Name = "txtDateRet";
+            this.txtDateRet.Size = new System.Drawing.Size(100, 20);
+            this.txtDateRet.TabIndex = 36;
+            // 
+            // labDateRet
+            // 
+            this.labDateRet.AutoSize = true;
+            this.labDateRet.Location = new System.Drawing.Point(1165, 524);
+            this.labDateRet.Name = "labDateRet";
+            this.labDateRet.Size = new System.Drawing.Size(77, 13);
+            this.labDateRet.TabIndex = 37;
+            this.labDateRet.Text = "Date Returned";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 639);
+            this.Controls.Add(this.labDateRet);
+            this.Controls.Add(this.txtDateRet);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.labDate);
+            this.Controls.Add(this.labDateRen);
             this.Controls.Add(this.labGenre);
             this.Controls.Add(this.labPlot);
             this.Controls.Add(this.labRent_Cost);
@@ -458,7 +478,7 @@
             this.Controls.Add(this.labFirstName);
             this.Controls.Add(this.labCustID);
             this.Controls.Add(this.txtGenre);
-            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.txtDateRen);
             this.Controls.Add(this.txtMovieID);
             this.Controls.Add(this.txtRating);
             this.Controls.Add(this.txtTitle);
@@ -513,7 +533,7 @@
         private System.Windows.Forms.TextBox txtRent_Cost;
         private System.Windows.Forms.TextBox txtPlot;
         private System.Windows.Forms.TextBox txtGenre;
-        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtDateRen;
         private System.Windows.Forms.Label labCustID;
         private System.Windows.Forms.Label labFirstName;
         private System.Windows.Forms.Label labLastName;
@@ -526,7 +546,7 @@
         private System.Windows.Forms.Label labRent_Cost;
         private System.Windows.Forms.Label labYear;
         private System.Windows.Forms.Label labTitle;
-        private System.Windows.Forms.Label labDate;
+        private System.Windows.Forms.Label labDateRen;
         private System.Windows.Forms.Label labGenre;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabCutomer;
@@ -534,6 +554,8 @@
         private System.Windows.Forms.TabPage tabMovies;
         private System.Windows.Forms.TabPage tabRented_Movies;
         private System.Windows.Forms.DataGridView DgvRented_Movies;
+        private System.Windows.Forms.TextBox txtDateRet;
+        private System.Windows.Forms.Label labDateRet;
     }
 }
 

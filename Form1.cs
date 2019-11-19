@@ -75,7 +75,7 @@ namespace MadHatter_Video
                         loreData.loaddbCus();                                                                                      //  loreData.loaddb();
                         break;
                     case "btnDelCus":
-                        Delete(txtID.Text, "btnDelCus");// this runs the delete method and sends the ID in txtID and btnDelCus as Parameters
+                        Delete(txtID.Text, "btnDelCus");// this runs the delete method and sends the ID in txtID as Parameters and btnDelCus as Name og button pressed
                         loreData.loaddbCus();
                         break;
 
@@ -163,10 +163,10 @@ namespace MadHatter_Video
 
         }
 
-        public string Delete(string ID, string DelSwitch)
+        public string Delete(string id, string DelSwitch)// This gets the ID number and Name of button press.
         {
             //only run if there is something in the textbox
-            if (!object.ReferenceEquals(ID, string.Empty))
+            if (!object.ReferenceEquals(id, string.Empty))
             {
                 var myCommand = new SqlCommand();
                 switch (DelSwitch)
@@ -180,8 +180,8 @@ namespace MadHatter_Video
                     case "btnDelRenMov":
                         myCommand = new SqlCommand("DELETE FROM RentedMovies WHERE RMID = @ID", Con);
                         break;
-                }// the first "ID" is the one in the case@ID, the second on is the ID coming from the txt box
-                myCommand.Parameters.AddWithValue("ID", ID);
+                }// the first "ID" is the one in the case@ID, the second on is the id coming from the txt box
+                myCommand.Parameters.AddWithValue("ID", id);
                 //use parameters to prevent SQL injections
 
                 Con.Open();
@@ -269,9 +269,9 @@ namespace MadHatter_Video
             {
 
 
-                txtID.Text = DgvCustomers.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtFirstName.Text = DgvCustomers.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtLastName.Text = DgvCustomers.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtID.Text = DgvRented_Movies.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtMovieID.Text = DgvCustomers.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtID.Text = DgvCustomers.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtAddress.Text = DgvCustomers.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtPhone.Text = DgvCustomers.Rows[e.RowIndex].Cells[4].Value.ToString();
 
