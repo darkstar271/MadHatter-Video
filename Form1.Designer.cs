@@ -82,7 +82,7 @@
             // 
             // btnAlmovies
             // 
-            this.btnAlmovies.Location = new System.Drawing.Point(238, 588);
+            this.btnAlmovies.Location = new System.Drawing.Point(928, 205);
             this.btnAlmovies.Name = "btnAlmovies";
             this.btnAlmovies.Size = new System.Drawing.Size(75, 23);
             this.btnAlmovies.TabIndex = 0;
@@ -113,7 +113,7 @@
             // 
             // btnDelCus
             // 
-            this.btnDelCus.Location = new System.Drawing.Point(933, 189);
+            this.btnDelCus.Location = new System.Drawing.Point(1034, 83);
             this.btnDelCus.Name = "btnDelCus";
             this.btnDelCus.Size = new System.Drawing.Size(75, 40);
             this.btnDelCus.TabIndex = 3;
@@ -123,7 +123,7 @@
             // 
             // btnDelMov
             // 
-            this.btnDelMov.Location = new System.Drawing.Point(1053, 198);
+            this.btnDelMov.Location = new System.Drawing.Point(1034, 138);
             this.btnDelMov.Name = "btnDelMov";
             this.btnDelMov.Size = new System.Drawing.Size(75, 40);
             this.btnDelMov.TabIndex = 4;
@@ -133,7 +133,7 @@
             // 
             // btnDelRenMov
             // 
-            this.btnDelRenMov.Location = new System.Drawing.Point(1057, 244);
+            this.btnDelRenMov.Location = new System.Drawing.Point(1141, 138);
             this.btnDelRenMov.Name = "btnDelRenMov";
             this.btnDelRenMov.Size = new System.Drawing.Size(75, 40);
             this.btnDelRenMov.TabIndex = 5;
@@ -143,7 +143,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(820, 588);
+            this.button6.Location = new System.Drawing.Point(1034, 205);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 6;
