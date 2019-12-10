@@ -83,9 +83,10 @@ namespace MadHatter_Video
                         break;
                     case "btnDelRenMov":
                         break;
-                    case "  6 ":
+                    case "btnIssMov":// Issue Movie
+                        IsuMovie();
                         break;
-                    case " 7  ":
+                    case "btnRtMov":// Return Movie
                         break;
                     case " 8  ":
                         break;
@@ -283,5 +284,52 @@ namespace MadHatter_Video
                 throw;
             }
         }
+
+
+        private void IsuMovie()// method for Issuing a movie
+        {
+
+            DateTime now = DateTime.Now;
+            string issue = now.ToString();
+            this.Text = issue;
+            txtDateRen.Text = issue;
+
+
+            string[] NewRental = { txtMovieID.Text, txtID.Text, txtDateRen.Text, }; // "NewRental" is the name of the string, that  sends data to the add rented movie method
+            AddRented(NewRental);
+            loreData.loaddbRenMov();
+
+        }
+
+
+
+        // this is the add rented method, must be reworked for this project
+
+        public void AddRented(string[] NewRental)
+        {
+            string NewRentalEntry = "INSERT INTO RentedMovies (MovieIDFK, CustIDFK, DateRented) VALUES ( @MovieIDFK, @CustIDFK, @DateRented)";
+
+            SqlConnection Con = new SqlConnection();
+
+            Con.ConnectionString = loreData.Trek;
+            using (SqlCommand newdataRental = new SqlCommand(NewRentalEntry, Con))
+            {
+                newdataRental.Parameters.AddWithValue("@MovieIDFK", NewRental[0]);
+                newdataRental.Parameters.AddWithValue("@CustIDFK", NewRental[1]);
+                newdataRental.Parameters.AddWithValue("@DateRented", Convert.ToDateTime(NewRental[2]));
+                Con.Open();
+                newdataRental.ExecuteNonQuery();
+
+
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }

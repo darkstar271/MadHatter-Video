@@ -34,7 +34,7 @@
             this.btnDelCus = new System.Windows.Forms.Button();
             this.btnDelMov = new System.Windows.Forms.Button();
             this.btnDelRenMov = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnIssMov = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -71,6 +71,7 @@
             this.DgvRented_Movies = new System.Windows.Forms.DataGridView();
             this.txtDateRet = new System.Windows.Forms.TextBox();
             this.labDateRet = new System.Windows.Forms.Label();
+            this.btnRtMov = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovies)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabCutomer.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             this.btnAlmovies.Location = new System.Drawing.Point(928, 205);
             this.btnAlmovies.Name = "btnAlmovies";
-            this.btnAlmovies.Size = new System.Drawing.Size(75, 23);
+            this.btnAlmovies.Size = new System.Drawing.Size(75, 40);
             this.btnAlmovies.TabIndex = 0;
             this.btnAlmovies.Text = "All Movies";
             this.btnAlmovies.UseVisualStyleBackColor = true;
@@ -141,15 +142,15 @@
             this.btnDelRenMov.UseVisualStyleBackColor = true;
             this.btnDelRenMov.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
-            // button6
+            // btnIssMov
             // 
-            this.button6.Location = new System.Drawing.Point(1034, 205);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.BtnAlmovies_Click);
+            this.btnIssMov.Location = new System.Drawing.Point(1034, 205);
+            this.btnIssMov.Name = "btnIssMov";
+            this.btnIssMov.Size = new System.Drawing.Size(75, 40);
+            this.btnIssMov.TabIndex = 6;
+            this.btnIssMov.Text = "Issue Movie";
+            this.btnIssMov.UseVisualStyleBackColor = true;
+            this.btnIssMov.Click += new System.EventHandler(this.BtnAlmovies_Click);
             // 
             // txtID
             // 
@@ -455,11 +456,22 @@
             this.labDateRet.TabIndex = 37;
             this.labDateRet.Text = "Date Returned";
             // 
+            // btnRtMov
+            // 
+            this.btnRtMov.Location = new System.Drawing.Point(1141, 214);
+            this.btnRtMov.Name = "btnRtMov";
+            this.btnRtMov.Size = new System.Drawing.Size(75, 40);
+            this.btnRtMov.TabIndex = 38;
+            this.btnRtMov.Text = "Return Movie";
+            this.btnRtMov.UseVisualStyleBackColor = true;
+            this.btnRtMov.Click += new System.EventHandler(this.BtnAlmovies_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 639);
+            this.Controls.Add(this.btnRtMov);
             this.Controls.Add(this.labDateRet);
             this.Controls.Add(this.txtDateRet);
             this.Controls.Add(this.tabControl1);
@@ -491,7 +503,7 @@
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnIssMov);
             this.Controls.Add(this.btnDelRenMov);
             this.Controls.Add(this.btnDelMov);
             this.Controls.Add(this.btnDelCus);
@@ -519,7 +531,7 @@
         private System.Windows.Forms.Button btnDelCus;
         private System.Windows.Forms.Button btnDelMov;
         private System.Windows.Forms.Button btnDelRenMov;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnIssMov;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
@@ -556,6 +568,7 @@
         private System.Windows.Forms.DataGridView DgvRented_Movies;
         private System.Windows.Forms.TextBox txtDateRet;
         private System.Windows.Forms.Label labDateRet;
+        private System.Windows.Forms.Button btnRtMov;
     }
 }
 

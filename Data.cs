@@ -16,6 +16,7 @@ namespace MadHatter_Video
         // this is the connection string, it can be used anywhere in program and it is read only.
         // public String Trek { get; } = @"Data Source=CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
 
+        // this is the connection string, it can be used anywhere in program and it is read only.
         public String Trek { get; } = @"Data Source = CYGNUS271\SQLEXPRESS;Initial Catalog = VBMoviesFullData; Integrated Security = True";
 
         SqlConnection Con = new SqlConnection();
@@ -125,7 +126,7 @@ namespace MadHatter_Video
                         reader["MovieIDFK"],
                         reader["CustIDFK"],
                         reader["DateRented"],
-                        reader["DateRetured"]);
+                        reader["DateReturned"]);
 
                 }
                 reader.Close();
@@ -141,7 +142,7 @@ namespace MadHatter_Video
         // This gets the data form each column and sends it to the table Columns
         public void datatablecolumns()// movies
         {
-            MovieTable.Clear();
+            //MovieTable.Clear();
             try
             {
                 MovieTable.Columns.Add("MovieID");
